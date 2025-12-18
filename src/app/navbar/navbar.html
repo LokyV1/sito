@@ -1,8 +1,50 @@
-<mat-toolbar id="navbar">
-    <button mat-icon-button aria-label="Menu button" id="menuButton">
-        <mat-icon>menu</mat-icon>
-    </button>
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- Logo Section -->
+        <div class="navbar-brand">
+            <a href="#" class="logo">
+                <span class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
+                    </svg>
+                </span>
+                <span class="logo-text">Ecologistic</span>
+            </a>
+        </div>
 
-    <span id="nomeApp">NomeApp</span>
+        <!-- Desktop Navigation Menu -->
+        <ul class="navbar-menu" id="navbarMenu">
+            <li class="navbar-item">
+                <a href="#home" class="navbar-link active">Home</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#about" class="navbar-link">Dashboard</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#services" class="navbar-link">Reparti</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#careers" class="navbar-link">Veicoli</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#contact" class="navbar-link">Contattaci</a>
+            </li>
+        </ul>
 
-</mat-toolbar>
+        <!-- CTA Button & Mobile Toggle -->
+        <div class="navbar-actions">
+            <button class="cta-button">
+                <span>Inizia Ora</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                </svg>
+            </button>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+</nav>
