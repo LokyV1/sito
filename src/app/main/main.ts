@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, effect, inject, input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { signal } from '@angular/core';
@@ -10,18 +10,17 @@ import { signal } from '@angular/core';
   templateUrl: './main.html',
   styleUrl: './main.css',
 })
+
 export class Main implements OnInit {
-  private http = inject(HttpClient);
 
-  //creazione della variabile signal
-  data = signal<string>('Caricamento...');
+  constructor(private http: HttpClient) { }
 
-  //attesa dei dati
-  async ngOnInit(): Promise<void> {
-    const response = await firstValueFrom(this.http.get<any>('/api/users'));
-    console.log(response);
+  data = signal<any>(null);
 
-    //salva i dati nella variabile
-    this.data.set(response.data[0].first_name);
+  ngOnInit(): void {
+    this.http.get<any>('https://pokeapi.co/api/v2/pokemon/ditto').subscribe((data) => {
+      console.log(data);
+      this.data.set(data);
+    })
   }
 }

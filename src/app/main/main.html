@@ -1,7 +1,6 @@
-<p id="p">{{ data() }}</p>
+<h1>Fetching data...</h1>
 
-<section>
-    <h1>
-        ciao
-    </h1>
-</section>
+<p> nome: {{ data().name }}</p>
+<p> peso: {{ data().weight }}</p>
+<p> altezza: {{ data().height }}</p>
+<p> tipo: {{ data().types[0].type.name }}</p>
