@@ -11,11 +11,15 @@ import { signal } from '@angular/core';
   styleUrl: './main.css',
 })
 
+
+
 export class Main implements OnInit {
 
   constructor(private http: HttpClient) { }
 
   data = signal<any>(null);
+  isLoading = signal<boolean>(false);
+
 
   ngOnInit(): void {
     this.http.get<any>('https://pokeapi.co/api/v2/pokemon/ditto').subscribe((data) => {
@@ -23,4 +27,5 @@ export class Main implements OnInit {
       this.data.set(data);
     })
   }
+
 }
